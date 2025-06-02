@@ -1,5 +1,5 @@
-import { Welcome } from "../welcome/welcome";
+import { Profile } from "~/profile/profile";
 
-export default function Main() {
-  return <Welcome />;
+export default function Home() {
+  return <Profile />;
 }
