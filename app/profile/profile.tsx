@@ -6,7 +6,7 @@ export function Profile() {
       </p>
       <img
         className="mx-auto mb-10 h-64 w-64 rounded-full border-4 border-gray-300 dark:border-gray-700"
-        src="../../profile.jpg"
+        src="/profile.jpg"
       />
       <h2 className="my-3 text-lg font-semibold text-gray-900 dark:text-white">
         Profile
