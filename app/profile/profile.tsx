@@ -1,4 +1,5 @@
-import { FaGithub, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaTwitter} from "react-icons/fa";
+import { ImBlog } from "react-icons/im";
 interface profileLink {
   title: string;
   userName: string;
@@ -9,7 +10,7 @@ interface profileLink {
 export function Profile() {
   const date = new Date();
   const age = date.getFullYear() - 2005;
-  const myLinks:profileLink[] = [
+  const myLinks: profileLink[] = [
     {
       title: "GitHub",
       userName: "@Suzune2741",
@@ -21,6 +22,12 @@ export function Profile() {
       userName: "@Suzune2741",
       link: "https://twitter.com/Suzune2741",
       icon: <FaTwitter className="icon mx-2" size="1.5rem" />,
+    },
+    {
+      title: "hatena blog",
+      userName: "Suzune2741",
+      link: "https://suzune2741.hatenablog.com/about",
+      icon: <ImBlog className="icon mx-2" size="1.5rem" />,
     },
   ];
   return (
