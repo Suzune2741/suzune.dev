@@ -1,23 +1,46 @@
+import { FaGithub, FaTwitter } from "react-icons/fa";
+interface profileLink {
+  title: string;
+  userName: string;
+  link: string;
+  icon?: React.ReactNode;
+}
+
 export function Profile() {
+  const date = new Date();
+  const age = date.getFullYear() - 2005;
+  const myLinks:profileLink[] = [
+    {
+      title: "GitHub",
+      userName: "@Suzune2741",
+      link: "https://github.com/Suzune2741",
+      icon: <FaGithub className="icon mx-2" size="1.5rem" />,
+    },
+    {
+      title: "Twitter",
+      userName: "@Suzune2741",
+      link: "https://twitter.com/Suzune2741",
+      icon: <FaTwitter className="icon mx-2" size="1.5rem" />,
+    },
+  ];
   return (
     <div>
-      <p className="mb-10 text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+      <h2 className="mb-10 text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
         Hi, I'm Suzune!
-      </p>
+      </h2>
       <img
         className="mx-auto mb-10 h-64 w-64 rounded-full border-4 border-gray-300 dark:border-gray-700"
         src="/profile.jpg"
       />
-      <h2 className="my-3 text-lg font-semibold text-gray-900 dark:text-white">
+      <h2 className="my-3.5 text-3xl text-center font-semibold text-gray-900 dark:text-white">
         Profile
       </h2>
-
       <ul className="list-disc pl-5 ">
         <li>
           <strong>Name:</strong> Suzune
         </li>
         <li>
-          <strong>Age:</strong> 20
+          <strong>Age:</strong> {age}
         </li>
         <li>
           <strong>Location:</strong> Shimane/Japan
@@ -25,6 +48,25 @@ export function Profile() {
         <li>
           <strong>Hobbies:</strong> Programming, Gaming, Anime
         </li>
+      </ul>
+      <h2 className="my-3.5 text-3xl text-center font-semibold text-gray-900 dark:text-white">
+        Links
+      </h2>
+      <ul>
+        {myLinks.map((link) => (
+          <li key={link.title} className="flex mb-2">
+            {link.title} {link.icon && link.icon}:
+            <a
+              href={link.link}
+              className="text-white-500 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {link.userName}
+            </a>
+            
+          </li>
+        ))}
       </ul>
     </div>
   );

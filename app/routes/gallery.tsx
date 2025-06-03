@@ -7,6 +7,7 @@ interface nazotokiProp {
 interface productProp {
   title: string;
   link?: string;
+  intoroduction?: string;
 }
 export default function Gallery() {
   const nazotoki: nazotokiProp[] = [
@@ -14,7 +15,11 @@ export default function Gallery() {
     { date: "2025/05/31", title: "謎のタワーマンションからの脱出" },
   ];
   const products: productProp[] = [
-    { title: "ポートフォリオ" },
+    {
+      title: "ポートフォリオ",
+      link: "https://github.com/Suzune2741/suzune.net",
+      intoroduction: "このサイト.react, typescript, tailwindcssで作成",
+    },
   ];
   return (
     <div>
@@ -38,7 +43,15 @@ export default function Gallery() {
         <ul>
           <ul>
             {products.map((product) => (
-              <li>{product.title}</li>
+              <div>
+                <li className="flex flex-col">
+                  {product.title}
+                  {/* <img src="/home_image.png" className="max-h-40 max-w-40" /> */}
+                  {product.intoroduction && (
+                    <span className="ml-2">{product.intoroduction}</span>
+                  )}
+                </li>
+              </div>
             ))}
           </ul>
         </ul>
