@@ -4,7 +4,7 @@ interface profileLink {
   title: string;
   userName: string;
   link: string;
-  icon?: React.ReactNode;
+  icon: React.ReactNode;
 }
 
 export function Profile() {
@@ -53,6 +53,9 @@ export function Profile() {
           <strong>Location:</strong> Shimane/Japan
         </li>
         <li>
+          <strong>belong to:</strong> NITMC,Poporon Network
+        </li>
+        <li>
           <strong>Hobbies:</strong> Programming, Gaming, Anime
         </li>
       </ul>
@@ -62,16 +65,15 @@ export function Profile() {
       <ul>
         {myLinks.map((link) => (
           <li key={link.title} className="flex mb-2">
-            {link.title} {link.icon && link.icon}:
+            {link.title} {link.icon && link.icon}
             <a
               href={link.link}
               className="text-white-500 hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {link.userName}
+              :{link.userName}
             </a>
-            
           </li>
         ))}
       </ul>
