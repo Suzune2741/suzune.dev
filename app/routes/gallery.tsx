@@ -6,9 +6,43 @@ interface nazotokiProp {
 }
 interface productProp {
   title: string;
-  link?: string;
-  intoroduction?: string;
+  link: {
+    href: string;
+    text: string;
+  };
+  intoroduction: string;
+  image?: React.ReactNode;
 }
+const GalleryList = ({ datas }: { datas: productProp[] }) => {
+  return (
+    <ul>
+      {datas.map((data) => (
+        <li key={data.title} className="my-2">
+          <div className="rounded bg-gray-200 px-3.5 py-1 text-white dark:text-black">
+            <p className="text-xl">{data.title}</p>
+            <div className="ml-2">
+              {data.intoroduction}
+              <br />
+              Link:&nbsp;
+              <a
+                href={data.link.href}
+                className="hover:text-blue-700 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {data.link.text}
+              </a>
+            </div>
+            {data.image && (
+              <div className="mt-2 flex justify-center-safe">{data.image}</div>
+            )}
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 export default function Gallery() {
   const nazotoki: nazotokiProp[] = [
     { date: "2024/06/30", title: "監獄アルバトロスからの脱出" },
@@ -17,21 +51,57 @@ export default function Gallery() {
   const products: productProp[] = [
     {
       title: "ポートフォリオ",
-      link: "https://github.com/Suzune2741/suzune.net",
+      link: {
+        href: "https://github.com/Suzune2741/suzune.net",
+        text: "GitHub",
+      },
       intoroduction: "このサイト.react, typescript, tailwindcssで作成",
+      image: (
+        <img
+          src="/home_image.png"
+          alt="ポートフォリオ"
+          className="max-w-64 max-h-64 rounded-lg shadow-lg mb-3"
+        />
+      ),
+    },
+  ];
+  const others: productProp[] = [
+    {
+      title: "WashBoard",
+      link: {
+        href: "https://github.com/mct-joken/WashBoard",
+        text: "GitHub",
+      },
+      intoroduction: "2023年度の高専プロコンで開発",
+    },
+    {
+      title: "kcmsx",
+      link: {
+        href: "https://github.com/poporonnet/kcmsx",
+        text: "GitHub",
+      },
+      intoroduction: "Matz葉がにロボコンの大会運営補助システム",
+    },
+    {
+      title: "kaniwriter",
+      link: {
+        href: "https://github.com/poporonnet/kaniwriter",
+        text: "GitHub",
+      },
+      intoroduction: "mruby/c ブラウザ用書き込みツール",
     },
   ];
   return (
-    <div>
+    <div className="space-y-3">
       <div className="mb-10 text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
         Gallery
       </div>
-      <div>
-        <h2 className="text-2xl my-2">謎解き/リアル脱出ゲーム</h2>
+      <div className="border-b-2 border-grey-300 dark:border-gray-700">
+        <h2 className="text-2xl">謎解き/リアル脱出ゲーム</h2>
         <ul>
           {nazotoki.map((item) => (
-            <div>
-              <li>
+            <div key={item.title}>
+              <li key={item.title}>
                 {item.date}:{item.title}
               </li>
             </div>
@@ -39,22 +109,12 @@ export default function Gallery() {
         </ul>
       </div>
       <div>
-        <h2 className="text-2xl my-2">制作物</h2>
-        <ul>
-          <ul>
-            {products.map((product) => (
-              <div>
-                <li className="flex flex-col">
-                  {product.title}
-                  {/* <img src="/home_image.png" className="max-h-40 max-w-40" /> */}
-                  {product.intoroduction && (
-                    <span className="ml-2">{product.intoroduction}</span>
-                  )}
-                </li>
-              </div>
-            ))}
-          </ul>
-        </ul>
+        <h2 className="text-2xl">制作物</h2>
+        <GalleryList datas={products} />
+      </div>
+      <div>
+        <h2 className="text-2xl my-2">その他</h2>
+        <GalleryList datas={others} />
       </div>
     </div>
   );
