@@ -19,7 +19,7 @@ const GalleryList = ({ datas }: { datas: productProp[] }) => {
       {datas.map((data) => (
         <li key={data.title} className="my-2">
           <div className="rounded bg-gray-200 px-3.5 py-1 text-white dark:text-black">
-            <p className="text-xl">{data.title}</p>
+            <p className="text-lg lg:text-xl">{data.title}</p>
             <div className="ml-2">
               {data.intoroduction}
               <br />
@@ -93,11 +93,11 @@ export default function Gallery() {
   ];
   return (
     <div className="space-y-3">
-      <div className="mb-10 text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+      <div className="mb-10 text-center text-gray-900 text-4xl md:text-5xl lg:text-6xl dark:text-white">
         Gallery
       </div>
       <div className="border-b-2 border-grey-300 dark:border-gray-700">
-        <h2 className="text-2xl">謎解き/リアル脱出ゲーム</h2>
+        <h2 className="text-xl md:text-2xl">謎解き/リアル脱出ゲーム</h2>
         <ul>
           {nazotoki.map((item) => (
             <div key={item.title}>

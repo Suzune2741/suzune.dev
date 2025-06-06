@@ -32,7 +32,7 @@ export function Profile() {
   ];
   return (
     <div>
-      <h2 className="mb-10 text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+      <h2 className="mb-10 text-center text-gray-900 text-3xl md:text-5xl lg:text-6xl dark:text-white">
         Hi, I'm Suzune!
       </h2>
       <img
