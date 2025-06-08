@@ -18,7 +18,7 @@ const GalleryList = ({ datas }: { datas: productProp[] }) => {
     <ul>
       {datas.map((data) => (
         <li key={data.title} className="my-2">
-          <div className="rounded bg-gray-200 px-3.5 py-1 text-white dark:text-black">
+          <div className="rounded bg-[#2d3543] px-3.5 py-1 text-[#f8ffff] dark:text-black  dark:bg-gray-200">
             <p className="text-lg lg:text-xl">{data.title}</p>
             <div className="ml-2">
               {data.intoroduction}
