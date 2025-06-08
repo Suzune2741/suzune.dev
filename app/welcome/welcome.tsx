@@ -6,7 +6,7 @@ export const Welcome = () => {
     <>
       <div className="flex justify-center h-screen w-screen items-center">
         <div>
-          <h1 className="text-7xl">Welcome to Suzune.dev</h1>
+          <h1 className="text-3xl md:text-7xl">Welcome to Suzune.dev</h1>
           <div className="flex justify-center">
             {menuItems.map((item) => (
               <Link
