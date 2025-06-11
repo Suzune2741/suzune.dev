@@ -1,10 +1,10 @@
-import { FaGithub, FaTwitter} from "react-icons/fa";
+import { FaGithub, FaTwitter } from "react-icons/fa";
 import { ImBlog } from "react-icons/im";
 interface profileLink {
   title: string;
-  userName: string;
-  link: string;
-  icon: React.ReactNode;
+  displayName: string;
+  href: string;
+  icon?: React.ReactNode;
 }
 
 export function Profile() {
@@ -13,21 +13,20 @@ export function Profile() {
   const myLinks: profileLink[] = [
     {
       title: "GitHub",
-      userName: "@Suzune2741",
-      link: "https://github.com/Suzune2741",
+      displayName: "@Suzune2741",
+      href: "https://github.com/Suzune2741",
       icon: <FaGithub className="icon mx-2" size="1.5rem" />,
     },
     {
       title: "Twitter",
-      userName: "@Suzune2741",
-      link: "https://twitter.com/Suzune2741",
+      displayName: "@Suzune2741",
+      href: "https://twitter.com/Suzune2741",
       icon: <FaTwitter className="icon mx-2" size="1.5rem" />,
     },
     {
-      title: "hatena blog",
-      userName: "Suzune2741",
-      link: "https://suzune2741.hatenablog.com/about",
-      icon: <ImBlog className="icon mx-2" size="1.5rem" />,
+      title: "Hatena Blog",
+      displayName: "suzune2741.hatenablog.com",
+      href: "https://suzune2741.hatenablog.com",
     },
   ];
   return (
@@ -67,12 +66,12 @@ export function Profile() {
           <li key={link.title} className="flex mb-2">
             {link.title} {link.icon && link.icon}:
             <a
-              href={link.link}
+              href={link.href}
               className="text-white-500 hover:underline hover:text-blue-500"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {link.userName}
+              {link.displayName}
             </a>
           </li>
         ))}
