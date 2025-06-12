@@ -1,9 +1,10 @@
 import { FaGithub, FaTwitter } from "react-icons/fa";
-import { ImBlog } from "react-icons/im";
+import { IoMail } from "react-icons/io5";
+import Activity from "~/components/activity";
 interface profileLink {
   title: string;
   displayName: string;
-  href: string;
+  href?: string;
   icon?: React.ReactNode;
 }
 
@@ -24,6 +25,11 @@ export function Profile() {
       icon: <FaTwitter className="icon mx-2" size="1.5rem" />,
     },
     {
+      title: "Mail",
+      displayName: "suzune2741[at]gmail.com",
+      icon: <IoMail className="icon mx-2" size="1.5rem" />,
+    },
+    {
       title: "Hatena Blog",
       displayName: "suzune2741.hatenablog.com",
       href: "https://suzune2741.hatenablog.com",
@@ -41,7 +47,7 @@ export function Profile() {
       <h2 className="my-3.5 text-3xl text-center font-semibold text-gray-900 dark:text-white">
         Profile
       </h2>
-      <ul className="list-disc pl-5 ">
+      <ul className="list-disc pl-5">
         <li>
           <strong>Name:</strong> Suzune
         </li>
@@ -49,30 +55,35 @@ export function Profile() {
           <strong>Age:</strong> {age}
         </li>
         <li>
-          <strong>Location:</strong> Shimane/Japan
+          <strong>Location:</strong> 島根県松江市(Matsue/Shimane)
         </li>
         <li>
           <strong>belong to:</strong> NITMC,Poporon Network
         </li>
         <li>
-          <strong>Hobbies:</strong> Programming, Gaming, Anime
+          <strong>Hobbies:</strong> プログラミング, 音楽鑑賞, ゲーム, スポーツ観戦
         </li>
       </ul>
+      <Activity />
       <h2 className="my-3.5 text-3xl text-center font-semibold text-gray-900 dark:text-white">
         Links
       </h2>
       <ul>
         {myLinks.map((link) => (
-          <li key={link.title} className="flex mb-2">
-            {link.title} {link.icon && link.icon}:
-            <a
-              href={link.href}
-              className="text-white-500 hover:underline hover:text-blue-500"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {link.displayName}
-            </a>
+          <li key={link.title} className="flex mb-1">
+            {link.title} {link.icon}:
+            {link.href ? (
+              <a
+                href={link.href}
+                className="text-white-500 hover:underline hover:text-blue-500"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.displayName}
+              </a>
+            ) : (
+              <>{link.displayName}</>
+            )}
           </li>
         ))}
       </ul>
