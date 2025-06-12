@@ -2,14 +2,13 @@
 interface nazotokiProp {
   date: string;
   title: string;
-  link?: string;
 }
 interface productProp {
   title: string;
   link: {
     href: string;
     text: string;
-  };
+  }[];
   intoroduction: string;
   image?: React.ReactNode;
 }
@@ -24,14 +23,19 @@ const GalleryList = ({ datas }: { datas: productProp[] }) => {
               {data.intoroduction}
               <br />
               Link:&nbsp;
-              <a
-                href={data.link.href}
-                className="hover:text-blue-700 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {data.link.text}
-              </a>
+              {data.link.map((link) => (
+                <>
+                  <a
+                    href={link.href}
+                    className="hover:text-blue-700 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.text}
+                  </a>
+                  &nbsp;
+                </>
+              ))}
             </div>
             {data.image && (
               <div className="mt-2 flex justify-center-safe">{data.image}</div>
@@ -51,10 +55,12 @@ export default function Gallery() {
   const products: productProp[] = [
     {
       title: "ポートフォリオ",
-      link: {
-        href: "https://github.com/Suzune2741/suzune.net",
-        text: "GitHub",
-      },
+      link: [
+        {
+          href: "https://github.com/Suzune2741/suzune.net",
+          text: "GitHub",
+        },
+      ],
       intoroduction: "このサイト.react, typescript, tailwindcssで作成",
       image: (
         <img
@@ -68,26 +74,36 @@ export default function Gallery() {
   const others: productProp[] = [
     {
       title: "WashBoard",
-      link: {
-        href: "https://github.com/mct-joken/WashBoard",
-        text: "GitHub",
-      },
+      link: [
+        {
+          href: "https://github.com/mct-joken/WashBoard",
+          text: "GitHub",
+        },
+      ],
       intoroduction: "2023年度の高専プロコンで開発",
     },
     {
       title: "kcmsx",
-      link: {
-        href: "https://github.com/poporonnet/kcmsx",
-        text: "GitHub",
-      },
+      link: [
+        {
+          href: "https://github.com/poporonnet/kcmsx",
+          text: "GitHub",
+        },
+      ],
       intoroduction: "Matz葉がにロボコンの大会運営補助システム",
     },
     {
       title: "kaniwriter",
-      link: {
-        href: "https://github.com/poporonnet/kaniwriter",
-        text: "GitHub",
-      },
+      link: [
+        {
+          href: "https://github.com/poporonnet/kaniwriter",
+          text: "GitHub",
+        },
+        {
+          href: "https://ceres.epi.it.matsue-ct.ac.jp/writer/?id=undefined",
+          text: "サイト",
+        },
+      ],
       intoroduction: "mruby/c ブラウザ用書き込みツール",
     },
   ];
