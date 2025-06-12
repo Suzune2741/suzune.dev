@@ -2,7 +2,7 @@ interface ActivityProps {
   date: string;
   title: string;
 }
-export default function Activity() {
+export const Activity = () => {
   const activities: ActivityProps[] = [
     {
       date: "2023/10/14~10/15",
