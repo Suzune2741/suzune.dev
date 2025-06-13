@@ -24,7 +24,7 @@ const GalleryList = ({ datas }: { datas: productProp[] }) => {
               <br />
               Link:&nbsp;
               {data.link.map((link) => (
-                <div key={link.href}>
+                <span key={link.href}>
                   <a
                     href={link.href}
                     className="hover:text-blue-700 hover:underline"
@@ -34,7 +34,7 @@ const GalleryList = ({ datas }: { datas: productProp[] }) => {
                     {link.text}
                   </a>
                   &nbsp;
-                </div>
+                </span>
               ))}
             </div>
             {data.image && (
@@ -117,7 +117,7 @@ export default function Gallery() {
         <ul>
           {nazotoki.map((item) => (
             <div key={item.title}>
-              <li key={item.title+item.date}>
+              <li key={item.title + item.date}>
                 {item.date}:{item.title}
               </li>
             </div>
