@@ -5,9 +5,13 @@ interface ActivityProps {
 export const Activity = () => {
   const activities: ActivityProps[] = [
     {
+      date:"2022/2/19",
+      title:"松江オープンソースビジネスプランコンテスト2022に参加. 奨励賞,IIJ賞を受賞."
+    },
+    {
       date: "2023/10/14~10/15",
       title:
-        "高専プロコンに参加. 発表を担当し特別賞/トヨタシステムズ賞を受賞しました.",
+        "高専プロコンに参加. 発表を担当し特別賞/トヨタシステムズ賞を受賞.",
     },
     {
       date: "2023/11/9",
@@ -15,13 +19,13 @@ export const Activity = () => {
     },
     {
       date: "2023/11/26",
-      title: "ICPCに出場. ",
+      title: "ICPCに出場.",
     },
     { date: "2024/1/6", title: "第1回Matz葉がにロボコンの大会運営として参加." },
     {
       date: "2024/2/17",
       title:
-        "松江オープンソースビジネスプランコンテストに参加. 奨励賞を受賞しました.",
+        "松江オープンソースビジネスプランコンテスト2024に参加. 奨励賞,IIJ賞を受賞.",
     },
     { date: "2024/12/5~12/6", title: "RubyWorldConfarenceに参加." },
     {
