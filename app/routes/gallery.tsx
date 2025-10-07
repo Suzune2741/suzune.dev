@@ -9,7 +9,7 @@ interface productProp {
     href: string;
     text: string;
   }[];
-  intoroduction: string;
+  introduction: string;
   image?: React.ReactNode;
 }
 const GalleryList = ({ datas }: { datas: productProp[] }) => {
@@ -20,7 +20,7 @@ const GalleryList = ({ datas }: { datas: productProp[] }) => {
           <div className="rounded bg-[#2d3543] px-3.5 py-1 text-[#f8ffff] dark:text-black  dark:bg-gray-200">
             <p className="text-lg lg:text-xl">{data.title}</p>
             <div className="ml-2">
-              {data.intoroduction}
+              {data.introduction}
               <br />
               Link:&nbsp;
               {data.link.map((link) => (
@@ -61,7 +61,7 @@ export default function Gallery() {
           text: "GitHub",
         },
       ],
-      intoroduction: "このサイト.react, typescript, tailwindcssで作成",
+      introduction: "このサイト.react, typescript, tailwindcssで作成",
       image: (
         <img
           src="/home_image.png"
@@ -80,7 +80,7 @@ export default function Gallery() {
           text: "GitHub",
         },
       ],
-      intoroduction: "2023年度の高専プロコンで開発",
+      introduction: "2023年度の高専プロコンで開発",
     },
     {
       title: "kcmsx",
@@ -90,7 +90,7 @@ export default function Gallery() {
           text: "GitHub",
         },
       ],
-      intoroduction: "Matz葉がにロボコンの大会運営補助システム",
+      introduction: "Matz葉がにロボコンの大会運営補助システム",
     },
     {
       title: "kaniwriter",
@@ -104,7 +104,7 @@ export default function Gallery() {
           text: "サイト",
         },
       ],
-      intoroduction: "mruby/c ブラウザ用書き込みツール",
+      introduction: "mruby/c ブラウザ用書き込みツール",
     },
   ];
   return (
