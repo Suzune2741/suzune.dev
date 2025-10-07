@@ -51,6 +51,7 @@ export default function Gallery() {
   const nazotoki: nazotokiProp[] = [
     { date: "2024/06/30", title: "監獄アルバトロスからの脱出" },
     { date: "2025/05/31", title: "謎のタワーマンションからの脱出" },
+    { date: "2025/09/14", title: "残像の交信からの脱出" },
   ];
   const products: productProp[] = [
     {
