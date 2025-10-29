@@ -1,3 +1,5 @@
+import type { Route } from "../+types/root";
+
 //統一できるかも
 interface nazotokiProp {
   date: string;
@@ -11,6 +13,11 @@ interface productProp {
   }[];
   introduction: string;
   image?: React.ReactNode;
+}
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "ギャラリー" },
+  ];
 }
 const GalleryList = ({ datas }: { datas: productProp[] }) => {
   return (
