@@ -15,9 +15,7 @@ interface productProp {
   image?: React.ReactNode;
 }
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "ギャラリー" },
-  ];
+  return [{ title: "ギャラリー" }];
 }
 const GalleryList = ({ datas }: { datas: productProp[] }) => {
   return (
@@ -74,6 +72,23 @@ export default function Gallery() {
         <img
           src="/home_image.png"
           alt="ポートフォリオ"
+          className="max-w-64 max-h-64 rounded-lg shadow-lg mb-3"
+        />
+      ),
+    },
+    {
+      title: "タイピングゲーム",
+      link: [
+        {
+          href: "https://typing.suzune.dev/",
+          text: "サイトへのリンク",
+        },
+      ],
+      introduction: "暇つぶし用に作ったタイピングゲーム",
+      image: (
+        <img
+          src="/typinggame.jpg"
+          alt="タイピングゲーム"
           className="max-w-64 max-h-64 rounded-lg shadow-lg mb-3"
         />
       ),
