@@ -23,7 +23,7 @@ export default function Header() {
         <Outlet />
       </main>
       <footer className="flex justify-center p-2 text-gray-500 dark:text-gray-400">
-        <p className="text-sm">© 2025 Suzune</p>
+        <p className="text-sm">© 2025-2026 Suzune</p>
       </footer>
     </div>
   );

@@ -58,6 +58,8 @@ export default function Gallery() {
     { date: "2025/05/31", title: "謎のタワーマンションからの脱出" },
     { date: "2025/09/14", title: "残像の交信からの脱出" },
     { date: "2025/11/22", title: "ヘンテコマンションと奇想天外ルームツアー" },
+    { date: "2025/12/08", title: "『止まらない豪華列車からの脱出』" },
+    { date: "2025/12/08", title: "じゃんけんデスゲームからの脱出" },
   ];
   const products: productProp[] = [
     {
@@ -153,7 +155,7 @@ export default function Gallery() {
         <GalleryList datas={products} />
       </div>
       <div>
-        <h2 className="text-2xl my-2">その他</h2>
+        <h2 className="text-2xl my-2">その他 チームで開発したもの</h2>
         <GalleryList datas={others} />
       </div>
     </div>
