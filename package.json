@@ -12,23 +12,23 @@
     "typecheck": "npm run cf-typegen && react-router typegen && tsc -b"
   },
   "dependencies": {
-    "isbot": "^5.1.27",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-icons": "^5.5.0",
-    "react-router": "^7.5.3"
+    "isbot": "^5.2.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-icons": "^5.7.0",
+    "react-router": "^7.18.7"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^1.0.12",
-    "@react-router/dev": "^7.5.3",
-    "@tailwindcss/vite": "^4.1.4",
-    "@types/node": "^20",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "tailwindcss": "^4.1.4",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.3",
+    "@cloudflare/vite-plugin": "^1.70.1",
+    "@react-router/dev": "^7.18.7",
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.3.1",
+    "@types/react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.6",
     "vite-tsconfig-paths": "^5.1.4",
-    "wrangler": "^4.13.2"
+    "wrangler": "^4.168.0"
   }
 }

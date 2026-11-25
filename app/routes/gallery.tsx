@@ -60,6 +60,7 @@ export default function Gallery() {
     { date: "2025/11/22", title: "ヘンテコマンションと奇想天外ルームツアー" },
     { date: "2025/12/08", title: "『止まらない豪華列車からの脱出』" },
     { date: "2025/12/08", title: "じゃんけんデスゲームからの脱出" },
+    {date:"2026/11/21",title:"ALTERAID"}
   ];
   const products: productProp[] = [
     {
